@@ -15,7 +15,7 @@ env = Environment(loader=FileSystemLoader('html'))
 class Landing_Page(object):
     @cherrypy.expose
     def index(self):
-        tmpl = env.get_template('indexOriginal.html')
+        tmpl = env.get_template('index.html')
         return tmpl.render()
 
 config = {
