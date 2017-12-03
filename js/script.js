@@ -312,40 +312,6 @@
           $(this).children().css("pointer-events", "none");
         });
     }
-  /* ==========================================================================
-      Mailchimp Form
-    ========================================================================== */
-    $('.subscribe form').submit(function(e) {
-        e.preventDefault();
-        var postdata = $('.subscribe form').serialize();
-        $.ajax({
-            type: 'POST',
-            url: 'assets/subscribe.php',
-            data: postdata,
-            dataType: 'json',
-            success: function(json) {
-                if(json.valid == 0) {
-                    $('.success-message').hide();
-                    $('.error-message').hide();
-                    $('.error-message').html(json.message);
-                    $('.error-message').fadeIn('fast', function(){
-                        $('.subscribe form').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                            $(this).removeClass('animated shake');
-                        });
-                    });
-                }
-                else {
-                    $('.error-message').hide();
-                    $('.success-message').hide();
-                    $('.subscribe form').hide();
-                    $('.success-message').html(json.message);
-                    $('.success-message').fadeIn('fast', function(){
-                        $('.top-content').backstretch("resize");
-                    });
-                }
-            }
-        });
-    });
     /* ==========================================================================
        Contact Form
     ========================================================================== */
@@ -423,7 +389,7 @@
         $('.menu a').each(function () {
             var currentLink = $(this);
             var refElement = $(currentLink.attr("href"));
-            if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
+            if (refElement.position() && refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
                 $('.menu li a').removeClass("active");
                 currentLink.addClass("active");
             }
@@ -432,4 +398,22 @@
             }
         });
     } 
+}());
+
+
+(function () {
+    
+    $('.subscribe-form').on('submit', onSubmit);
+
+    function onSubmit(e) {
+        e.preventDefault();
+        console.log('onSubmit');
+        
+        $('#register-email').attr('src', 'http://www.ai-claudio.com/bubbleblast/addmail.php?email=' + $('#subscribe-email').val());
+
+        $('#first-subscribe').toggle();
+        $('#second-subscribe').toggle();
+        $('#subscribed').toggle();
+        $('#second-subscribed').toggle();
+    }
 }());

@@ -288,8 +288,8 @@ img{
 	border-color:transparent;
 }
 .btn-secondary{
-	color:#FF66A3;
-	border:2px solid #FF66A3;  
+	color:white;
+	border:2px solid white;  
 }
 .btn-secondary:hover{
 	color: #fff;
@@ -889,9 +889,9 @@ img{
 	padding: 0;
 	border-radius: 0;
 	color: #fff;
-	background: -moz-linear-gradient(left, rgba(187,104,223,1) 0%, rgba(134,95,221,1) 48%, rgba(134,132,254,1) 100%);
-	background: -webkit-linear-gradient(left, rgba(187,104,223,1) 0%,rgba(134,95,221,1) 48%,rgba(134,132,254,1) 100%);
-	background: linear-gradient(to right, rgba(187,104,223,1) 0%,rgba(134,95,221,1) 48%,rgba(134,132,254,1) 100%);
+	background: -moz-linear-gradient(left, #ba0d1b 0%, #6b1d24 48%, #353131 100%);
+	background: -webkit-linear-gradient(left, #ba0d1b 0%, #6b1d24 48%, #353131 100%);
+	background: linear-gradient(to right, #ba0d1b 0%, #6b1d24 48%, #353131 100%);
 }
 
 .faq .panel-title, .glyphicon{

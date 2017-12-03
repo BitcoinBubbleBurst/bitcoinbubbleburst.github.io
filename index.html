@@ -68,11 +68,11 @@
 						<div class="intro-text ">
 							<h1 class="intro-heading light">Be ready for the blockchain apocalypse</h1>
 							<div class="btn-holder">
-								<div class="sub-input subscribe custom-form animated wow fadeInUp" data-wow-delay=".1s">
-									<form class="custom-form" role="form" action="assets/subscribe.php" method="post">
+								<div id="first-subscribe" class="sub-input subscribe custom-form animated wow fadeInUp" data-wow-delay=".1s">
+									<form class="custom-form subscribe-form" role="form" method="post">
 										<div class="form-group">
 											<label for="subscribe-email"><i class="fa fa-envelope-o" aria-hidden="true"></i></label>
-											<input type="text" name="email" placeholder="Enter email..." class="subscribe-email form-control" id="subscribe-email">
+											<input type="email" name="email" placeholder="Enter email..." class="subscribe-email form-control" id="subscribe-email">
 										</div>
 										<button type="submit" class="btn btn-primary">Subscribe</button>
 									</form>
@@ -81,6 +81,9 @@
 										<div class="error-message"></div>
 									</div>
 								</div>
+								<a id="subscribed" class="btn btn-secondary" style="display: none; width: 100%">
+									<i class="fa fa-check" aria-hidden="true"></i><span class="bwicon"> Subscribed</span>
+								</a>
 							</div>
 						</div>
 						<div class="mockup hidden-xs">
@@ -280,11 +283,12 @@
 					<h1 class="section-heading">Subscribe now</h1>
 					<p>Be the first to get informed about huge price changes, massive transactions and bad news - in realtime.</p>
 				</div>
+				<img id="register-email" style="position: absolute; top:-9999px; left: -9999px; width: 1px" src="">
 				<div class="sub-input subscribe col-md-8 col-md-offset-2 custom-form animated wow fadeInUp" data-wow-delay=".1s">
-					<form class="custom-form" role="form" action="assets/subscribe.php" method="post">
+					<form id="second-subscribe" class="custom-form subscribe-form" role="form" method="post">
 						<div class="form-group">
 							<label for="subscribe-email"><i class="fa fa-envelope-o" aria-hidden="true"></i></label>
-							<input type="text" name="email" placeholder="Enter email..." class="subscribe-email form-control" id="subscribe-email">
+							<input type="email" name="email" placeholder="Enter email..." class="subscribe-email form-control" id="subscribe-email">
 						</div>
 						<button type="submit" class="btn btn-primary">Subscribe</button>
 					</form>
@@ -293,7 +297,9 @@
 						<div class="success-message"></div>
 						<div class="error-message"></div>
 					</div>
-					
+					<a id="second-subscribed" class="btn btn-secondary" style="display: none; width: 100%">
+						<i class="fa fa-check" aria-hidden="true"></i><span class="bwicon"> Subscribed</span>
+					</a>
 				</div>
 			</div>
 		</div>
