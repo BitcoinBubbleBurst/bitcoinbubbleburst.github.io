@@ -454,10 +454,10 @@ img{
 }
 .navbar-custom ul li a:hover{
 	background:transparent;
-	color: #fa326f; 
+	color: #ba0d1b; 
 }
 .navbar-nav li a.active, .navbar-custom.affix li a.active{
-	color: #fa326f;
+	color: #ba0d1b;
 }
 
 .navbar-custom.affix{
@@ -902,7 +902,7 @@ img{
 	top: -5px;
 	padding: 5px 10px;
 	border-radius: 50%;
-	background: #FF66A3;
+	/* background: #FF66A3; */
 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
