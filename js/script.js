@@ -291,16 +291,16 @@
       if ($mapholder.length > 0) {
         var map = new GMaps({
           div: '#gmap',
-          lat: -12.043333,
-          lng: -77.028333
+          lat: 52.496760, 
+          lng: 13.453210
         });
 
         map.addMarker({
-        lat: -12.043333,
-        lng: -77.028333,
-        title: 'Lima',
+        lat: 52.496760, 
+        lng: 13.453210,
+        title: 'Bitcoin Bubble Burst',
         click: function(e) {
-          alert('You clicked in this marker');
+        //   alert('You clicked in this marker');
         }
       });
 
