@@ -114,7 +114,7 @@ a:hover{
 	text-decoration: none;
 }
 .sec-pad{
-	padding:100px 0px;
+	padding:50px 0px;
 }
 .sec-pad-lg{
 	padding:150px 0px;
@@ -1302,4 +1302,17 @@ img{
 	background: -moz-linear-gradient(left, #ba0d1b 0%, #6b1d24 48%, #353131 100%);
 	background: -webkit-linear-gradient(left, #ba0d1b 0%,#6b1d24 48%,#353131 100%);
 	background: linear-gradient(to right, #ba0d1b 0%,#6b1d24 48%,#353131 100%);
+}
+.media {
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+}
+.media a {
+	margin-top: 35px;
+	display: flex;
+}
+
+.media a img {
+	align-self: center;
 }
