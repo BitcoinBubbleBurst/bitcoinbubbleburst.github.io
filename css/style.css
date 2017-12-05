@@ -1320,3 +1320,6 @@ img{
 .media a img {
 	align-self: center;
 }
+#first-subscribe {
+	pointer-events: all;
+}
