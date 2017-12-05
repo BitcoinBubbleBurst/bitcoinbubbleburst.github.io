@@ -480,6 +480,7 @@ img{
 	overflow: hidden;
 }
 .hero-content{
+	pointer-events: none;
 	height: 750px;
 	position: relative;
 }
@@ -499,6 +500,9 @@ img{
 	position:absolute;
 	top: 60px;
 	right: 0;
+}
+.intro-text, .mockup, .section-heading {
+	user-select: none;
 }
 .hero-content .intro-text p{
 	line-height: 28px;
