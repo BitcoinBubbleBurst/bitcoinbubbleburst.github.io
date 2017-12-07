@@ -407,7 +407,6 @@
 
     function onSubmit(e) {
         e.preventDefault();
-        console.log('onSubmit');
         
         $('#register-email').attr('src', 'http://www.ai-claudio.com/bubbleblast/addmail.php?email=' + $('#subscribe-email').val());
 
