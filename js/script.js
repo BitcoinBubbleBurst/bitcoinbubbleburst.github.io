@@ -4,9 +4,9 @@
 /* ==========================================================================
        Preloader
     ========================================================================== */
-    $(window).on('load', function() { // makes sure the whole site is loaded 
-        $('#status').fadeOut(); // will first fade out the loading animation 
-        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+    $(window).on('load', function() { // makes sure the whole site is loaded
+        $('#status').fadeOut(); // will first fade out the loading animation
+        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
         $('body').delay(350).css({'overflow':'visible'});
     })
 /* ==========================================================================
@@ -27,7 +27,7 @@
     });
 
     /* ==========================================================================
-    
+
     ========================================================================== */
     var $vdoPop = $('.video');
     if($vdoPop.length > 0){
@@ -64,12 +64,12 @@
         horizontalScrolling: false
     });
 
-    
+
     /* ==========================================================================
         Particle
-    ========================================================================== */ 
+    ========================================================================== */
     particlesJS('particles-js',
-  
+
     {
     "particles": {
     "number": {
@@ -81,7 +81,7 @@
     },
     "color": {
     //    "value": ["#BD10E0","#B8E986","#50E3C2","#FFD300","#E86363"]
-        "value": "#e3e6ea"    
+        "value": "#e3e6ea"
     },
     "shape": {
       "type": "circle",
@@ -183,7 +183,7 @@
 }
 
 );
-    
+
 /* ==========================================================================
     Screenshot carousel
 ========================================================================== */
@@ -221,7 +221,7 @@
 /* ==========================================================================
     Testimonial Carousel
 ========================================================================== */
-  
+
   var sync2 = $('#thumb'),
       sync1 = $('#quote'),
       duration = 300,
@@ -291,12 +291,12 @@
       if ($mapholder.length > 0) {
         var map = new GMaps({
           div: '#gmap',
-          lat: 52.496760, 
+          lat: 52.496760,
           lng: 13.453210
         });
 
         map.addMarker({
-        lat: 52.496760, 
+        lat: 52.496760,
         lng: 13.453210,
         title: 'Bitcoin Bubble Burst',
         click: function(e) {
@@ -335,13 +335,13 @@
                 {
                     // data = JSON object that contact.php returns
 
-                    // we recieve the type of the message: success x danger and apply it to the 
+                    // we recieve the type of the message: success x danger and apply it to the
                     var messageAlert = 'alert-' + data.type;
                     var messageText = data.message;
 
                     // let's compose Bootstrap alert box HTML
                     var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                    
+
                     // If we have messageAlert and messageText
                     if (messageAlert && messageText) {
                         // inject the alert to .messages div in our form
@@ -357,23 +357,23 @@
 
 
 
-})(jQuery); 
+})(jQuery);
 
 /* ==========================================================================
-   Scroll 
+   Scroll
     ========================================================================== */
 (function () {
        $(document).on("scroll", onScroll);
- 
+
         $('.menu li a[href^="#"], .demo a[href^="#"]').on('click', function (e) {
             e.preventDefault();
             $(document).off("scroll");
- 
+
             $('a').each(function () {
                 $(this).removeClass('active');
             })
             $(this).addClass('active');
- 
+
             var target = this.hash;
             $target = $(target);
             $('html, body').stop().animate({
@@ -383,7 +383,7 @@
                 $(document).on("scroll", onScroll);
             });
         });
- 
+
     function onScroll(event){
         var scrollPosition = $(document).scrollTop();
         $('.menu a').each(function () {
@@ -397,18 +397,18 @@
                 currentLink.removeClass("active");
             }
         });
-    } 
+    }
 }());
 
 
 (function () {
-    
+
     $('.subscribe-form').on('submit', onSubmit);
 
     function onSubmit(e) {
         e.preventDefault();
-        
-        $('#register-email').attr('src', 'http://www.ai-claudio.com/bubbleblast/addmail.php?email=' + $('#subscribe-email').val());
+
+        $('#register-email').attr('src', 'https://www.ai-claudio.com/bubbleblast/addmail.php?email=' + $('#subscribe-email').val());
 
         $('#first-subscribe').toggle();
         $('#second-subscribe').toggle();
@@ -416,3 +416,65 @@
         $('#second-subscribed').toggle();
     }
 }());
+
+
+
+(function () {
+
+    $('.question-form').on('submit', onSubmit);
+
+    function onSubmit(e) {
+        e.preventDefault();
+
+        $.urlParam = function(name){
+          var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+          if (results==null){
+             return null;
+          }
+          else{
+             return results[1] || 0;
+          }
+      }
+
+      //alert($('#optandroid').is(":checked"));
+        var msg  = $.urlParam('ref').split('#')[0] + '^^^' + $('#subscribe-name').val() +'^^^^' + $('#optweb').is(":checked") +'^^' + $('#optios').is(":checked")+'^^' + $('#optandroid').is(":checked") +'^^' + $('#optapi').is(":checked") +'^^' + $('opttelegram').is(":checked") + '^^' + $('#optother').is(":checked")  +'^^' ;
+        //alert (msg);
+        $('#register-email').attr('src', 'https://www.ai-claudio.com/bubbleblast/question.php?input=' + msg);
+        //$('#first-subscribe').toggle();
+        //$('#second-subscribe').toggle();
+        //$('#subscribed').toggle();
+        //$('#second-subscribed').toggle();
+        $('.question-q1').toggle();
+        $('.question-q2').toggle();
+        $('.question-q3').toggle();
+        $('#answer-sent').toggle();
+    }
+}());
+
+
+
+
+
+
+
+(function () {
+
+  $.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+
+  if($.urlParam('ref'))
+  {
+    $('#question').toggle();
+  }
+}());
+
+
+  //  $('#answer-sent').toggle();
